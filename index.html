@@ -4,9 +4,11 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div>Teachable Machine Image Model</div>
-        <button type="button" onclick="init()">Start</button>
-		<button type="button" onclick="predict()">예측</button>
+        <div style="text-align: center; font-size: 40px;">동물상 테스트</div>
+        <button type="button" onclick="init()" style = "color: white;
+    background-color: #d7281d; font-size: 50px; width: 200px;">First</button>
+        <button type="button" onclick="predict()"style = "color: white;
+    background-color: #d7281d; font-size: 45px; width: 200px;">Start</button>
         <script
             class="jsbin"
             src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
@@ -105,8 +107,8 @@
             // run the webcam image through the image model
             async function predict() {
                 // predict can take in an image, video or canvas html element
-				var image = document.getElementById('face-image')
-                const prediction = await model.predict(image,false);
+                var image = document.getElementById('face-image');
+                const prediction = await model.predict(image, false);
                 for (let i = 0; i < maxPredictions; i++) {
                     const classPrediction =
                         prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
